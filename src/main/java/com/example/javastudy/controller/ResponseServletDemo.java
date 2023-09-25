@@ -28,29 +28,20 @@ public class ResponseServletDemo extends HttpServlet {
         String uri = req.getRequestURI();
         String method = StringUtil.subUri(uri);
         switch (method){
-            case "demo1" : {
+            case "demo1" -> {
                 this.demo1(req,resp);
             }
-            case "demo2" : {
+            case "demo2" -> {
                 this.demo2(req,resp);
             }
-            case "demo3" : {
+            case "demo3"-> {
                 this.demo3(req,resp);
             }
-            case "demo4" : {
+            case "demo4" -> {
                 this.demo4(req,resp);
             }
-            case "demo5" : {
+            case "demo5" ->{
                 this.demo5(req,resp);
-            }
-            case "demo6" : {
-                this.demo6(req,resp);
-            }
-            case "demo7" : {
-                this.demo7(req,resp);
-            }
-            case "demo8" : {
-                this.demo8(req,resp);
             }
         }
     }
@@ -70,6 +61,7 @@ public class ResponseServletDemo extends HttpServlet {
       //重定向可以跨域访问
       resp.sendRedirect("https://www.baidu.cn");
       log.info("response demo1");
+
   }
     private void demo2(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         System.out.println("responseDemo被访问...");
@@ -102,15 +94,6 @@ public class ResponseServletDemo extends HttpServlet {
         sos.write("你好".getBytes(StandardCharsets.UTF_8));
         log.info("response demo5");
     }
-    private void demo6(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
-        log.info("response demo6");
-    }
-    private void demo7(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        log.info("response demo7");
-    }
-    private void demo8(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        log.info("response demo8");
-    }
 
 }
